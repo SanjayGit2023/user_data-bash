@@ -22,8 +22,8 @@ if ! aws --version; then
 fi
 
 # Configure AWS CLI with access keys
-aws configure set aws_access_key_id 
-aws configure set aws_secret_access_key 
+aws configure set aws_access_key_id "YOUR_ACCESS_KEY" 
+aws configure set aws_secret_access_key "YOUR-SECRET_ACCESS_KEY" 
 aws configure set default.region "ap-south-1"
 aws configure set default.output "json"
 
@@ -56,7 +56,7 @@ if ! eksctl version; then
 fi
 
 # Create EKS cluster (2 nodes)
-eksctl create cluster --name demo-cluster --region ap-south-1 --nodes 2
+eksctl create cluster --name my-cluster --region ap-south-1 --nodes 2
 
 # Update kubeconfig to use the new cluster
-aws eks update-kubeconfig --name demo-cluster --region ap-south-1
+aws eks update-kubeconfig --name my-cluster --region ap-south-1
